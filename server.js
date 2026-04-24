@@ -17,6 +17,7 @@ app.use(express.json());
 app.use("/atendimentos", atendimentoRoutes);
 
 const PORT = process.env.PORT || 3000;
+app.listen(PORT);
 
 // Teste de conexão com o banco
 const startServer = async () => {
