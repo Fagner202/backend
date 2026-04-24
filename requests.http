@@ -11,3 +11,6 @@ Content-Type: application/json
 
 ### Buscar atendimento por ID
 GET http://localhost:3000/atendimentos/62f628ab-67fe-4add-a06f-dc591af95a33
+
+### Gerar ASO (PDF)
+GET http://localhost:3000/atendimentos/62f628ab-67fe-4add-a06f-dc591af95a33/aso
