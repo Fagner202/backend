@@ -85,13 +85,26 @@ export const gerarASO = async (req, res) => {
       align: "center",
     });
 
+    doc.moveDown(2);
+
+    doc.fontSize(12).text("DADOS DO PACIENTE");
     doc.moveDown();
 
-    doc.fontSize(12).text(`Nome: ${atendimento.nome_paciente}`);
-    doc.text(`Data: ${atendimento.data_atendimento}`);
+    doc.text(`Nome: ${atendimento.nome_paciente}`);
+    doc.text(
+      `Data: ${new Date(atendimento.data_atendimento).toLocaleDateString("pt-BR")}`
+    );
     doc.text(`Tipo de exame: ${atendimento.tipo_exame}`);
-    doc.text(`Resultado: ${atendimento.resultado}`);
-    doc.text(`Observações: ${atendimento.observacoes || "-"}`);
+
+    doc.moveDown();
+
+    doc.text("RESULTADO");
+    doc.text(`Situação: ${atendimento.resultado}`);
+
+    doc.moveDown(3);
+
+    doc.text("____________________________");
+    doc.text("Médico responsável");
 
     doc.end();
   } catch (error) {
