@@ -2,9 +2,12 @@ POST http://localhost:3000/atendimentos
 Content-Type: application/json
 
 {
-  "nome_paciente": "João Silva",
+  "nome_paciente": "Fagner Silva",
   "data_atendimento": "2026-04-19",
   "tipo_exame": "Admissional",
   "resultado": "APTO",
   "observacoes": "Sem restrições"
 }
+
+### Buscar atendimento por ID
+GET http://localhost:3000/atendimentos/62f628ab-67fe-4add-a06f-dc591af95a33
